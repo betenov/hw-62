@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import Card from "./components/Card/Card";
 import Pricing from "./containers/Pricing/Pricing";
 import Contacts from "./containers/Contacts/Contacts";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   return (
@@ -12,11 +12,21 @@ function App() {
         <NavBar/>
       </header>
       <main>
-        <Card/>
-        <Pricing/>
+        <Routes>
+          <Route path={"/"} element={(
+            <Card/>
+          )}/>
+          <Route path={'/pricing'} element={(
+            <Pricing/>
+          )}/>
+        </Routes>
       </main>
       <div>
-        <Contacts/>
+        <Routes>
+          <Route path={"/contacts"} element={(
+            <Contacts/>
+          )}/>
+        </Routes>
       </div>
 
     </>
