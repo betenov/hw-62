@@ -1,6 +1,9 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 const Card = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
       <div className="row">
@@ -10,7 +13,7 @@ const Card = () => {
               <h5 className="card-title">Акция!</h5>
               <p className="card-text">У нас Акция при заказе 30 фото размера S (85*70) <br/>
                 коробочка с оформлернием и белым наполнителем в подарок</p>
-              <a href="#" className="btn btn-primary">Перейти</a>
+              <button  className="btn btn-primary" onClick={ () => navigate('/order')}>Перейти</button>
             </div>
           </div>
         </div>
@@ -21,7 +24,7 @@ const Card = () => {
               <p className="card-text">Работаем только с оригинальными краскаит от Epson ! <br/>
               Минимальный заказ 10 фото
               </p>
-              <a href="#" className="btn btn-primary">Перейти</a>
+              <button className="btn btn-primary" onClick={() => navigate('/order')}>Перейти</button>
             </div>
           </div>
         </div>

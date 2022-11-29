@@ -4,6 +4,7 @@ import Card from "./components/Card/Card";
 import Pricing from "./containers/Pricing/Pricing";
 import Contacts from "./containers/Contacts/Contacts";
 import {Route, Routes} from "react-router-dom";
+import Order from "./containers/Order/Order";
 
 function App() {
   return (
@@ -19,15 +20,16 @@ function App() {
           <Route path={'/pricing'} element={(
             <Pricing/>
           )}/>
-        </Routes>
-      </main>
-      <div>
-        <Routes>
           <Route path={"/contacts"} element={(
             <Contacts/>
           )}/>
+          <Route path={'/order'} element={(<Order/>)}/>
+          <Route path={"*"} element={(
+            <h2> Перейдите на главное меню </h2>
+          )}/>
         </Routes>
-      </div>
+      </main>
+
 
     </>
   );
